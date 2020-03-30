@@ -11,3 +11,7 @@ if type brew &>/dev/null; then
     done
   fi
 fi
+
+# Load rbenv automatically
+eval "$(rbenv init -)"
+
