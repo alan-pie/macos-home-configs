@@ -24,4 +24,4 @@ export NVM_DIR="$HOME/.nvm"
 source <(npm completion)
 
 # Aliases
-alias rm="Use trash-put instead"
+alias rm="echo Use trash-put instead"
