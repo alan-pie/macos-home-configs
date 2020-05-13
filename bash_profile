@@ -24,3 +24,7 @@ source <(npm completion)
 alias rm="echo Use trash-put instead"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
