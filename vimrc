@@ -1,6 +1,9 @@
 " Turn on syntax highlighting
 syntax on
 
+" Show the ruler in the status bar
+set ruler
+
 " A few google specific settings from go/vim sites page.
 set expandtab
 set shiftwidth=2
