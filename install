@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 set -x
-for config_file in bash_profile bashrc tmux.conf vimrc gitconfig; do
+for config_file in bash_profile bashrc tmux.conf vimrc gitconfig rvmrc; do
   # Notice that in the script dir there is no '.' prefix, but there is in home
   ln -i -s "${DIR}/${config_file}" "${HOME}/.${config_file}"
 done

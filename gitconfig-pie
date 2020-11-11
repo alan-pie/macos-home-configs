@@ -1,6 +1,6 @@
 [user]
-	name = Alan Savage
-	email = asavageiv@gmail.com
+  name = Alan Savage
+  mail = 65185890+alan-pie@users.noreply.github.com       
 [diff]
   tool = meld
 [difftool]
@@ -18,5 +18,3 @@
 
 [pull]
 	ff = only
-[branch]
-	autoSetupRebase = always
