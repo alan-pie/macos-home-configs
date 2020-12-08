@@ -1,22 +1,20 @@
 [user]
-	name = Alan Savage
-	email = asavageiv@gmail.com
+name = Alan Savage
+email = asavageiv@gmail.com
 [diff]
-  tool = meld
+tool = kdiff3
+guitool = kdiff3
 [difftool]
-  prompt = false
-[difftool "meld"]
-  trustExitCode = true
-  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+prompt = false
 [merge]
-  tool = meld
+tool = kdiff3
 [mergetool]
-  prompt = false
+prompt = false
 [mergetool "meld"]
-  trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+trustExitCode = true
+cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 
 [pull]
-	ff = only
+ff = only
 [branch]
-	autoSetupRebase = always
+autoSetupRebase = always
