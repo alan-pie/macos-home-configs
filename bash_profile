@@ -1,3 +1,5 @@
+echo "Executing ~/.bash_profile"
+
 export CLICOLOR=1
 
 # Enable Brew bash completions
@@ -92,11 +94,6 @@ export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-
-# This must be last to get RVM to put the right value at the beginning of PATH
-
-eval "$(direnv hook bash)"
 
 # Aliases
 alias prspec='parallel_rspec spec'
@@ -105,4 +102,22 @@ alias srspec='rspec --format d'
 # Disable coverage by default for our tests
 NO_COVERAGE=true
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# ruby-build is a dependency of rbenv in Homebrew
+# ruby-build installs a non-Homebrew OpenSSL for each Ruby version installed and these are never upgraded.
+
+# To link Rubies to Homebrew's OpenSSL 1.1 (which is upgraded) add the following
+# to your /Users/asavage/.bash_profile:
+#   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# 
+# Note: this may interfere with building old versions of Ruby (e.g <2.4) that use
+# OpenSSL <1.1.
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+ 
+# Load rbenv automatically by appending
+# the following to ~/.bash_profile:
+eval "$(rbenv init -)"
+
+# Load direnv after rbenv so project binstubs will go before rbenv shims in the
+# PATH. This must be in bashrc to run on every shell instantiation to work with
+# tmux.
+eval "$(direnv hook bash)"
